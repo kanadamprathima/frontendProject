@@ -1,26 +1,67 @@
-import { Title } from "../styled"
-import { Link } from "react-router-dom"
-import { LinkWord } from "../styled"
-import styled from "styled-components"
+import { useEffect, useRef, useState } from "react";
+import styled from "styled-components";
+import { MapContainer, TileLayer, useMap, Marker, Popup } from "react-leaflet";
+import "./Homepage.css";
+import RoutePoints from "../components/RoutePoints";
 
-export const Homepage = () => {
+const Homepage = () => {
+  const mapElement = useRef();
+  // const [map, setMap] = useState({});
+  const [longitude, setLongitude] = useState(4.903);
+  const [latitude, setLatitude] = useState(52.3681);
+  const convertToPoints = (lnglat) => {
+    return {
+      point: {
+        latitude: lnglat.lat,
+        longitude: lnglat.lng,
+      },
+    };
+  };
 
   return (
     <Container>
-     <h3>Hello there 👋</h3>
-     <p>General information:</p>
-     <ul>
-      <li>Go to your backend and modify the config url</li>
-      <li>Make sure you clicked on the <b>use template</b> button on github</li>
-      <li>This template is using <a style={LinkWord} target="_blank" href="https://styled-components.com/">styled components</a>, you don't have to use it</li>
-      <li>You don't have to follow the folder structure, feel free to adapt to your own</li>
-      <li>Login and SignUp are already implemented</li>
-      <li>Modify this page to create your own homeepage</li>
-     </ul>
+      <h1>display maps using api here</h1>
+      <div className="searchBar">
+        <label>
+          from:
+          <input
+            type="text"
+            value={latitude}
+            placeholder="Enter pickUp location"
+            onChange={(e) => setLatitude(e.target.value)}
+          />
+        </label>
+        <label>
+          To:
+          <input
+            type="text"
+            value={longitude}
+            placeholder="Where to? "
+            onChange={(e) => setLongitude(e.target.value)}
+          />
+        </label>
+      </div>
+      <MapContainer
+        style={{ height: "600px" }}
+        center={[latitude, longitude]}
+        zoom={13}
+        scrollWheelZoom={false}
+        onClick={(e) => console.log(e)}
+      >
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        <RoutePoints />
+        <Marker position={[latitude, longitude]}>
+          <Popup>You are here!</Popup>
+        </Marker>
+      </MapContainer>
     </Container>
-  )
-}
+  );
+};
+export default Homepage;
 
 const Container = styled.div`
-  margin: 20px
-`
+  margin: 20px;
+`;
