@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectToken } from "../store/user/selectors";
+import { selectToken, selectUser } from "../store/user/selectors";
 import { logOut } from "../store/user/slice";
 import { Link } from "react-router-dom";
 
@@ -11,6 +11,7 @@ export const Navigation = () => {
   const dispatch = useDispatch();
 
   const token = useSelector(selectToken);
+  const username = useSelector(selectUser);
 
   return (
     <Nav>
@@ -26,7 +27,11 @@ export const Navigation = () => {
         <MenuLink to="/rides">Find A Ride</MenuLink>
         <MenuLink to="/offerride">Offer A Ride</MenuLink>
         {token ? (
-          <button onClick={() => dispatch(logOut())}>Logout</button>
+          <div>
+            {" "}
+            <h3 style={{ color: "#ececec" }}>Welcome {username?.name} </h3>
+            <button onClick={() => dispatch(logOut())}>Logout</button>
+          </div>
         ) : (
           <MenuLink to="/login">Login</MenuLink>
         )}
@@ -36,13 +41,13 @@ export const Navigation = () => {
 };
 
 const MenuLink = styled(Link)`
-  padding: 1rem 2rem;
+  padding: 1rem 7rem;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
   color: #ececec;
   transition: all 0.3s ease-in;
-  font-size: 0.9rem;
+  font-size: 2rem;
 
   &:hover {
     color: #9cc094;
