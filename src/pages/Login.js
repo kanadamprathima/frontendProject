@@ -19,7 +19,7 @@ export const Login = () => {
 
   useEffect(() => {
     if (token !== null) {
-      navigate("/");
+      navigate("/rides");
     }
   }, [token, navigate]);
 

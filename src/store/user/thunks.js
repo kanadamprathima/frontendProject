@@ -4,6 +4,7 @@ import { selectToken } from "./selectors";
 import { appLoading, appDoneLoading, setMessage } from "../appState/slice";
 import { showMessageWithTimeout } from "../appState/thunks";
 import { loginSuccess, logOut, tokenStillValid } from "./slice";
+import { fetchAllRides } from "../ride/thunks";
 
 export const signUp = (name, email, password) => {
   return async (dispatch, getState) => {
@@ -115,4 +116,16 @@ export const getUserWithStoredToken = () => {
       dispatch(appDoneLoading());
     }
   };
+};
+
+export const deleteRide = (rideId) => async (dispatch, getState) => {
+  const { token, profile } = getState().user;
+  const userId = profile.id;
+
+  const response = await axios.delete(
+    `${apiUrl}/users/${userId}/rides/${rideId}`,
+    { headers: { Authorization: `Bearer ${token}` } }
+  );
+  console.log("delete res from thunk", response);
+  dispatch(fetchAllRides());
 };

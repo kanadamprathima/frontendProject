@@ -11,16 +11,9 @@ const OfferRidePage = () => {
   const [rideInfo, setRideInfo] = useState({});
 
   return (
-    <div className="container ">
-      <div
-        className="card"
-        style={{
-          boxShadow: "12px 12px 2px 1px rgba(0, 0, 255, .2)",
-          boxSizing: "content-box",
-        }}
-      >
+    <div className="container" style={{ width: "500", height: "600" }}>
+      <div className="card" style={{ display: "flex", alignItems: "center" }}>
         <h2>publish ride</h2>
-
         <FindRide />
       </div>
       <br />

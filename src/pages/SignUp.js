@@ -19,7 +19,7 @@ export const SignUp = () => {
 
   useEffect(() => {
     if (token !== null) {
-      navigate("/");
+      navigate("/rides");
     }
   }, [token, navigate]);
 
@@ -31,7 +31,7 @@ export const SignUp = () => {
   return (
     <div style={{ textAlign: "center" }}>
       <Container>
-        <ParticlesBg type="color" bg={true} />
+        {/* <ParticlesBg type="color" bg={true} /> */}
         <Title>Sign Up</Title>
         <form onSubmit={submitForm}>
           <Input

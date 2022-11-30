@@ -55,24 +55,26 @@ const FindRide = () => {
     // console.log("on suggesion change", value);
   }
   return (
-    <div>
+    <div style={{ width: "500px", height: "600" }}>
       <GeoapifyContext apiKey="f499725a973c4152bbc5edaadb541dc4">
         <div>
           <form onSubmit={handleSubmit}>
-            <GeoapifyGeocoderAutocomplete
-              placeholder="Enter pickup address here"
-              value={from.name}
-              placeSelect={onPlaceSelectFrom}
-              suggestionsChange={onSuggectionChange}
-            />
-            <br />
-            <GeoapifyGeocoderAutocomplete
-              placeholder="Enter drop address here"
-              value={to.name}
-              placeSelect={onPlaceSelectTo}
-              suggestionsChange={onSuggectionChange}
-            />
-            <br />
+            <div>
+              <GeoapifyGeocoderAutocomplete
+                placeholder="Enter pickup address here"
+                value={from.name}
+                placeSelect={onPlaceSelectFrom}
+                suggestionsChange={onSuggectionChange}
+              />
+              <br />
+              <GeoapifyGeocoderAutocomplete
+                placeholder="Enter drop address here"
+                value={to.name}
+                placeSelect={onPlaceSelectTo}
+                suggestionsChange={onSuggectionChange}
+              />
+              <br />
+            </div>
             <label>
               Schedule date & startTime :{"   "}
               <input
@@ -83,11 +85,6 @@ const FindRide = () => {
               />{" "}
             </label>{" "}
             {"   "}
-            {/* <input
-              type="time"
-              value={time}
-              onChange={(e) => setTime(e.target.value)}
-            /> */}
             <br />
             <label>
               No.of Seats:
@@ -104,7 +101,7 @@ const FindRide = () => {
               className="btn btn-primary"
               onClick={() => dispatch(addRide)}
             >
-              Publish
+              Publish Your Ride
             </button>
           </form>
         </div>
