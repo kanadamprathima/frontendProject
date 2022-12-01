@@ -3,13 +3,13 @@ import { useDispatch } from "react-redux";
 import { addRide } from "../store/ride/thunks";
 
 import { useMap } from "react-leaflet/hooks";
-import {
-  MapContainer,
-  TileLayer,
-  Marker,
-  Popup,
-  useMapEvent,
-} from "react-leaflet";
+// import {
+//   MapContainer,
+//   TileLayer,
+//   Marker,
+//   Popup,
+//   useMapEvent,
+// } from "react-leaflet";
 
 // import axios from "axios";
 import {

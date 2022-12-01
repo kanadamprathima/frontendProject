@@ -15,7 +15,16 @@ const RideDetailsPage = () => {
   if (!rideDetails) return <div>Loading...</div>;
   return (
     <div className="container">
-      <div className="card" style={{ display: "flex", alignItems: "center" }}>
+      <div
+        className="card"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          marginTop: "4%",
+          border: "4px solid ghostWhite",
+          boxShadow: "12px 12px 2px 1px rgba(0, 0, 255, .2)",
+        }}
+      >
         <h4>DriverName: {rideDetails.user?.name}</h4>
         <p>
           <strong>Seats available:</strong>
