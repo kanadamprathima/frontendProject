@@ -15,21 +15,18 @@ const OfferRidePage = () => {
   // const [pickup, setPickup] = useState([52.3681, 4.903]);
   // const [dropOff, setDropOff] = useState([50.3681, 3.903]);
   const [rideInfo, setRideInfo] = useState({});
-  // function LocationMarker() {
-  //   const [position, setPosition] = useState([52.3681, 4.903]);
-  //   const map = useMapEvent({
-  //     click() {
-  //       map.locate();
-  //     },
-  //     locationfound(e) {
-  //       setPosition(e.latlng);
-  //       map.flyTo(e.latlng, map.getZoom());
-  //     },
-  //   });
 
   return (
     <div className="container" style={{ width: "500", height: "600" }}>
-      <div className="card" style={{ display: "flex", alignItems: "center" }}>
+      <div
+        className="card"
+        style={{
+          display: "flex",
+          alignItems: "center",
+          marginTop: "5%",
+          backgroundColor: "ghostwhite",
+        }}
+      >
         <h2>publish ride</h2>
         <FindRide />
       </div>

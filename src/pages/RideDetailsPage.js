@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import { selectDetails } from "../store/ride/selectors";
 import { fetchRideDetails } from "../store/ride/thunks";
 import { Link } from "react-router-dom";
-
 const RideDetailsPage = () => {
   const { id } = useParams();
   const dispatch = useDispatch();

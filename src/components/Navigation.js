@@ -41,13 +41,13 @@ export const Navigation = () => {
 };
 
 const MenuLink = styled(Link)`
-  padding: 1rem 7rem;
+  padding: 1rem 4rem;
   cursor: pointer;
   text-align: center;
   text-decoration: none;
   color: #ececec;
   transition: all 0.3s ease-in;
-  font-size: 2rem;
+  font-size: 1.5rem;
 
   &:hover {
     color: #9cc094;
@@ -60,7 +60,7 @@ const Nav = styled.div`
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  background: #b22727;
+  background: #7f00ff;
   /* position: absolute; */
   top: 0;
   left: 0;
