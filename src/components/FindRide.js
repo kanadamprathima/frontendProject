@@ -161,7 +161,7 @@ const FindRide = () => {
               />
             </label>
             <br />
-            <button
+            {/* <button
               className="btn btn-success"
               type="submit"
               onClick={calculateRouteAPI}
@@ -169,7 +169,7 @@ const FindRide = () => {
               Calculate Route
             </button>
             <p>distance:{distance}</p>
-            <p>Duration:{duration}</p>
+            <p>Duration:{duration}</p> */}
             <button
               type="submit"
               className="btn btn-primary"

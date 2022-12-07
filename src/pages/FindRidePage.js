@@ -29,8 +29,8 @@ const FindRidePage = () => {
         return (
           <div key={index}>
             <div className="card">
-              <h3>Driver:{ride.user?.name}</h3>
-              <p>seats available: {ride.amount}</p>
+              <h2 className="h2">Driver:{ride.user?.name}</h2>
+              <p className="h3">seats available: {ride.amount}</p>
               <MapContainer
                 style={{ height: "350px", width: "350px" }}
                 center={[ride.pickuplat, ride.pickuplong]}
@@ -50,11 +50,22 @@ const FindRidePage = () => {
                   <Popup>Point B - DropBy</Popup>
                 </Marker>
               </MapContainer>
-              <Link to={`/rides/${ride.id}`}>
-                <button className="btn btn-primary" style={{ width: 150 }}>
-                  View details
-                </button>
-              </Link>
+              <div>
+                <Link to={`/rides/${ride.id}`}>
+                  <button className="btn btn-primary" style={{ width: 150 }}>
+                    View details
+                  </button>
+                  {"   "}
+                </Link>
+                <br />
+                {token && ride.userId !== userId ? (
+                  <button className="btn btn-success" style={{ width: 150 }}>
+                    Join Ride
+                  </button>
+                ) : (
+                  ""
+                )}
+              </div>
               <br />
               {token && ride.userId === userId ? (
                 <button

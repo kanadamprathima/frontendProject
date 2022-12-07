@@ -25,7 +25,7 @@ const RideDetailsPage = () => {
           boxShadow: "12px 12px 2px 1px rgba(0, 0, 255, .2)",
         }}
       >
-        <h4>DriverName: {rideDetails.user?.name}</h4>
+        <h4 className="h4">DriverName: {rideDetails.user?.name}</h4>
         <p>
           <strong>Seats available:</strong>
           {"  "}
@@ -42,6 +42,7 @@ const RideDetailsPage = () => {
           <strong>starts at :</strong>
           {rideDetails.startTime}
         </p>
+
         <Link to={"/rides"}>
           <button className="btn btn-primary">Back</button>
         </Link>

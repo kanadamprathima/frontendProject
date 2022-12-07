@@ -4,11 +4,14 @@ import {
   TileLayer,
   Marker,
   Popup,
+  LayersControl,
   useMapEvent,
 } from "react-leaflet";
 import RoutePoints from "../components/RoutePoints";
 
 import { useState } from "react";
+const { BaseLayer } = LayersControl;
+
 const OfferRidePage = () => {
   const [latitude, setLatitude] = useState(52.3681);
   const [longitude, setLongitude] = useState(4.903);
@@ -27,7 +30,7 @@ const OfferRidePage = () => {
           backgroundColor: "ghostwhite",
         }}
       >
-        <h2>publish ride</h2>
+        <h2 className="h2">publish ride</h2>
         <FindRide />
       </div>
       <br />
@@ -37,12 +40,16 @@ const OfferRidePage = () => {
         center={[latitude, longitude]}
         zoom={13}
         scrollWheelZoom={false}
-        onClick={(e) => console.log(e)}
       >
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
+        <LayersControl>
+          <BaseLayer checked name="OpenStreetMap">
+            <TileLayer
+              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+          </BaseLayer>
+        </LayersControl>
+
         <RoutePoints />
         {/* {position === null ? null : (
             <Marker position={position}>
