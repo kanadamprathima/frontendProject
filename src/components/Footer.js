@@ -1,5 +1,6 @@
 import footer_bg from "../images/footer_bg.png";
 import volks from "../images/volks.gif";
+// import "./Footer.css";
 const Footer = () => {
   return (
     <div>
@@ -15,7 +16,7 @@ const Footer = () => {
         alt="giffy"
         style={{
           animation: "myfirst 22s linear infinite",
-          margin: "5% 20% ",
+          margin: "5% 25% ",
         }}
       />
     </div>

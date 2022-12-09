@@ -161,6 +161,7 @@ const FindRide = () => {
               />
             </label>
             <br />
+            <br />
             {/* <button
               className="btn btn-success"
               type="submit"

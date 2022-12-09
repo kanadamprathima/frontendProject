@@ -29,8 +29,11 @@ const FindRidePage = () => {
         return (
           <div key={index}>
             <div className="card">
-              <h2 className="h2">Driver:{ride.user?.name}</h2>
+              <h2 className="h2">
+                {ride.id}.Driver:{ride.user?.name}
+              </h2>
               <p className="h3">seats available: {ride.amount}</p>
+
               <MapContainer
                 style={{ height: "350px", width: "350px" }}
                 center={[ride.pickuplat, ride.pickuplong]}
