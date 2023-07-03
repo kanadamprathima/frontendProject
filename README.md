@@ -1,30 +1,21 @@
-# Rideshare is a full stack application where you can calculate the distance between origin and destination of your travel.
+# Rideshare 
+- RideShare is a full stack application using React and Javascript where you can calculate the distance between origin and destination of your travel.
 
+# Technologies used in Frontend
+- React
+- Redux
+- Javascript
+- GoogleMaps API
+- HTML5
+- CSS3
 
+# Installation 
+1. Clone the repo:
+   - git clone https://github.com/your-username/todo-app.git
 
+2.Install the dependencies:
 
-
-
-1. Clone the app
-
-```
-git clone git@github.com:YOUR_GITHUB_NAME/YOUR_PROJECT_NAME.git
-```
-
-3. cd into your project
-
-```
-cd YOUR_PROJECT_NAME
-```
-
-4. install dependencies
-
-```
-npm install
-```
-
-5. Start development server with npm start
-
-```
-npm start
-```
+- cd foldername.
+- npm install
+3. Start the development server:
+- npm run start.
