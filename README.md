@@ -11,8 +11,8 @@
 
 # Installation 
 1. Clone the repo:
- - git clone https://github.com/your-username/todo-app.git
-
+ - git clone https://github.com/kanadamprathima/frontendRideShareProject.git
+   
 2.Install the dependencies:
 
 - cd foldername.
